@@ -314,9 +314,8 @@ class Connection
 
         switch ($mode) {
             case static::DIVISION_MODE_SEPARATE_DATABASE:
-                $clone['database'] = $website->uuid;
-//                $clone['username'] = $clone['database'] = $website->uuid;
-//                $clone['password'] = $this->passwordGenerator->generate($website);
+                $clone['username'] = $clone['database'] = $website->uuid;
+                $clone['password'] = $this->passwordGenerator->generate($website);
                 break;
             case static::DIVISION_MODE_SEPARATE_PREFIX:
                 $clone['prefix'] = sprintf('%d_', $website->id);
